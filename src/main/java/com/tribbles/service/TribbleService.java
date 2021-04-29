@@ -12,19 +12,19 @@ public class TribbleService {
 
     TribbleDao tribbleDao = new TribbleDao();
 
-    int save(Tribble tribble){
+    public int save(Tribble tribble){
         return tribbleDao.save(tribble);
     }
 
-    Tribble read(Integer tribbleId){
+    public Tribble read(Integer tribbleId){
         return tribbleDao.read(tribbleId);
     }
 
-    int update(Tribble tribble){
+    public int update(Tribble tribble){
         return tribbleDao.update(tribble);
     }
 
-    int delete(Integer tribbleId){
+    public int delete(Integer tribbleId){
         return tribbleDao.delete(tribbleId);
     }
 }
