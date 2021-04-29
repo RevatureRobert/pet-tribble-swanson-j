@@ -50,11 +50,30 @@ public class LabDao implements InterfaceDao<Lab, Integer>{
 
     @Override
     public int update(Lab lab) {
-        return 0;
+        try {
+            String sql = "update labs set name = ?, planet = ? where labs.id = ?";
+            PreparedStatement preparedStatement = JDBCConfiguration.getInstance().getConnection().prepareStatement(sql);
+            preparedStatement.setString(1, lab.getName());
+            preparedStatement.setString(2, lab.getPlanet());
+            preparedStatement.setInt(3, lab.getId());
+            return preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return 0;
+        }
     }
 
     @Override
     public int delete(Integer id) {
-        return 0;
+        try {
+            String sql = "delete from labs where id = ?";
+            PreparedStatement preparedStatement = JDBCConfiguration.getInstance().getConnection().prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            return preparedStatement.executeUpdate();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return 0;
+        }
     }
 }
