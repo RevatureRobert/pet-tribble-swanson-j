@@ -10,19 +10,19 @@ public class LabService {
 
     LabDao labDao = new LabDao();
 
-    int save(Lab lab){
+    public int save(Lab lab){
         return labDao.save(lab);
     }
 
-    int read(Integer labId){
+    public Lab read(Integer labId){
         return labDao.read(labId);
     }
 
-    int update(Lab lab){
+    public int update(Lab lab){
         return labDao.update(lab);
     }
 
-    int delete(Integer labId){
+    public int delete(Integer labId){
         return labDao.delete(labId);
     }
 }

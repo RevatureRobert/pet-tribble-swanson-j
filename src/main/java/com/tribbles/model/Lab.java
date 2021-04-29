@@ -7,11 +7,13 @@ import java.util.List;
  */
 public class Lab {
     private int id;
-    private List<Tribble> tribbles;
+    private String name;
+    private String planet;
 
-    public Lab(int id, List<Tribble> tribbles) {
+    public Lab(int id, String name, String planet) {
         this.id = id;
-        this.tribbles = tribbles;
+        this.name = name;
+        this.planet = planet;
     }
 
     public int getId() {
@@ -22,11 +24,28 @@ public class Lab {
         this.id = id;
     }
 
-    public List<Tribble> getTribbles() {
-        return tribbles;
+    public String getName() {
+        return name;
     }
 
-    public void setTribbles(List<Tribble> tribbles) {
-        this.tribbles = tribbles;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPlanet() {
+        return planet;
+    }
+
+    public void setPlanet(String planet) {
+        this.planet = planet;
+    }
+
+    @Override
+    public String toString() {
+        return "Lab{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", planet='" + planet + '\'' +
+                '}';
     }
 }

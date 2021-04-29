@@ -16,7 +16,7 @@ public class TribbleService {
         return tribbleDao.save(tribble);
     }
 
-    int read(Integer tribbleId){
+    Tribble read(Integer tribbleId){
         return tribbleDao.read(tribbleId);
     }
 

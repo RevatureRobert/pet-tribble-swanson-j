@@ -8,7 +8,7 @@ package com.tribbles.dao;
 public interface InterfaceDao<T, I> {
 
     int save(T t);
-    int read(I id);
+    T read(I id);
     int update(T t);
     int delete(I id);
 }

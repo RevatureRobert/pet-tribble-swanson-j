@@ -13,8 +13,8 @@ public class TribbleDao implements InterfaceDao<Tribble, Integer>{
     }
 
     @Override
-    public int read(Integer id) {
-        return 0;
+    public Tribble read(Integer id) {
+        return null;
     }
 
     @Override

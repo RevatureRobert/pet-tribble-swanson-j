@@ -7,11 +7,13 @@ public class Tribble {
 
     private int id;
     private String name;
+    private String color;
     private Lab lab;
 
-    public Tribble(int id, String name, Lab lab) {
+    public Tribble(int id, String name, String color, Lab lab) {
         this.id = id;
         this.name = name;
+        this.color = color;
         this.lab = lab;
     }
 
@@ -35,7 +37,25 @@ public class Tribble {
         return lab;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     public void setLab(Lab lab) {
         this.lab = lab;
+    }
+
+    @Override
+    public String toString() {
+        return "Tribble{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                ", lab=" + lab +
+                '}';
     }
 }
