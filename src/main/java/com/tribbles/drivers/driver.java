@@ -13,9 +13,7 @@ public class driver {
         Lab newLab;
         LabService labService = new LabService();
 
-        if(labService.delete(4) == 1){
-            System.out.println("nice");
-        }
+        System.out.println(labService.read(5));
     }
 
 }

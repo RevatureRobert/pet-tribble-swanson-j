@@ -1,0 +1,38 @@
+create table labs(
+	id serial primary key,
+	name varchar(255),
+	planet varchar(255)
+);
+
+create table tribbles(
+	id serial primary key,
+	name varchar(255) not null,
+	color varchar(255),
+	lab_id int,
+
+	foreign key(lab_id) references labs(id)
+);
+
+drop table labs;
+drop table tribbles;
+
+create sequence tribbles_sequence
+	start 1
+	increment 1;
+
+create sequence labs_sequence
+	start 1
+	increment 1;
+
+insert into labs values(nextval('labs_sequence'), 'Lab1', 'Omicron')
+
+insert into tribbles values (nextval('tribbles_sequence'), 'name1', '2');
+insert into tribbles values (nextval('tribbles_sequence'), 'name2', '2');
+insert into tribbles values (nextval('tribbles_sequence'), 'name3', '2');
+insert into tribbles values (nextval('tribbles_sequence'), 'name4', '2');
+
+select * from labs;
+select * from tribbles;
+
+select * from tribbles
+join labs on tribbles.lab_id = labs.id;
